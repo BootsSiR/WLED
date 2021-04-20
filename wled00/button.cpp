@@ -90,6 +90,8 @@ void handleIO()
     {
       #if RLYPIN >= 0
        digitalWrite(RLYPIN, RLYMDE);
+       DEBUG_PRINT("RELAY:");
+       DEBUG_PRINTLN(RLYMDE);             
       #endif
       offMode = false;
     }
@@ -102,6 +104,8 @@ void handleIO()
       #endif
       #if RLYPIN >= 0
        digitalWrite(RLYPIN, !RLYMDE);
+       DEBUG_PRINT("RELAY:");
+       DEBUG_PRINTLN(!RLYMDE);
       #endif
      }
     offMode = true;
