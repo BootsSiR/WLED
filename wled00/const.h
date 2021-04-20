@@ -11,7 +11,7 @@
 #define DEFAULT_OTA_PASS    "wledota"
 
 //increase if you need more
-#define WLED_MAX_USERMODS 4
+#define WLED_MAX_USERMODS 10
 
 //Usermod IDs
 #define USERMOD_ID_RESERVED       0            //Unused. Might indicate no usermod present
@@ -21,6 +21,11 @@
 #define USERMOD_ID_FIXNETSERVICES 4            //Usermod "usermod_Fix_unreachable_netservices.h"
 #define USERMOD_ID_PIRSWITCH      5            //Usermod "usermod_PIR_sensor_switch.h"
 #define USERMOD_ID_IMU            6            //Usermod "usermod_mpu6050_imu.h"
+#define USERMOD_ID_PIEZO          7 
+#define USERMOD_ID_TEMP           8
+#define USERMOD_ID_PASSIVEPIR     9
+#define USERMOD_ID_LIGHTSENSOR    10
+#define USERMOD_ID_MCP3208        11
 
 //Access point behavior
 #define AP_BEHAVIOR_BOOT_NO_CONN  0            //Open AP when no connection after boot

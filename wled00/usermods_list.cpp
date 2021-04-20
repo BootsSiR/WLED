@@ -18,6 +18,15 @@
 #include "../usermods/buzzer/usermod_v2_buzzer.h"
 #endif
 
+#include "../mymods/piezo/piezo_mod.h"
+#include "../mymods/temp/temp_mod.h"
+#include "../mymods/passiveir_mod/passiveir_mod.h"
+#include "../mymods/lightsensor_mod/lightsensor_mod.h"
+#include "../mymods/pin_test_mod/pin_test_mod.h"
+#include "../mymods/mcp3208/mcp3208_mod.h"
+#include "../mymods/current_monitoring_mod/current_monitoring_mod.h"
+//#include "../usermods/PIR_sensor_switch/usermod_PIR_sensor_switch.h"
+
 void registerUsermods()
 {
   /*
@@ -25,12 +34,22 @@ void registerUsermods()
    * || || ||
    * \/ \/ \/
    */
+  
   //usermods.add(new MyExampleUsermod());
   #ifdef USERMOD_DALLASTEMPERATURE
-  usermods.add(new UsermodTemperature());
+  //usermods.add(new UsermodTemperature());
   #endif
   //usermods.add(new UsermodRenameMe());
   #ifdef USERMOD_BUZZER
   usermods.add(new BuzzerUsermod());
   #endif
+
+  //usermods.add(new PinTestUsermod());
+  usermods.add(new PiezoMod());
+  usermods.add(new TempMod());
+  usermods.add(new PassiveIRMod());
+  usermods.add(new MCP3208Mod());
+  usermods.add(new CurrentMonitoringMod());
+  //usermods.add(new LightSensorMod());
+  //usermods.add(new PIRsensorSwitch());
 }
