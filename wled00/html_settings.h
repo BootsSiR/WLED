@@ -129,7 +129,15 @@ size="2"> ms<br>Enable Palette transitions: <input type="checkbox" name="PF">
 max="255" required> min<br>Default Target brightness: <input name="TB" 
 type="number" min="0" max="255" required><br>Mode: <select name="TW"><option 
 value="0">Wait and set</option><option value="1">Fade</option><option value="2">
-Fade Color</option><option value="3">Sunrise</option></select><h3>Advanced</h3>
+Fade Color</option><option value="3">Sunrise</option></select><h3>
+Motion Detection</h3>Motion Activation Enabled: <input type="checkbox" 
+name="PIR_EN"><br>Activation Preset #: <input name="PIR_AP" type="number" 
+min="1" max="100"><br>Activation Timeout: <input name="PIR_SAT" type="number" 
+min="5" max="999999"> sec<br>Activation Cooldown: <input name="PIR_ACD" 
+type="number" min="5" max="999999"> sec<br>Active Hours: <input name="PIR_AFH" 
+type="number" min="0" max="23">: <input name="PIR_AFM" type="number" min="0" 
+max="59"> to <input name="PIR_ATH" type="number" min="0" max="23">: <input 
+name="PIR_ATM" type="number" min="0" max="59"><br><h3>Advanced</h3>
 Palette blending: <select name="PB"><option value="0">Linear (wrap if moving)
 </option><option value="1">Linear (always wrap)</option><option value="2">
 Linear (never wrap)</option><option value="3">None (not recommended)</option>

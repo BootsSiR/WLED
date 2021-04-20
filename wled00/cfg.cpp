@@ -160,6 +160,17 @@ void deserializeConfig() {
   CJSON(nightlightTargetBri, light_nl[F("tbri")]);
   CJSON(macroNl, light_nl[F("macro")]);
 
+  // PIR config
+  JsonObject pir_pir = light["pir"];
+  CJSON(pirEnabled, pir_pir[F("enabled")]);
+  CJSON(pirActivationPreset, pir_pir[F("activationPreset")]);
+  CJSON(pirStayActivatedTimeSec, pir_pir[F("stayActivatedTimeSec")]);
+  CJSON(pirActivationCooldownTimeSec, pir_pir[F("activationCooldownTimeSec")]);
+  CJSON(pirActiveFromHour, pir_pir[F("activeFromHour")]);
+  CJSON(pirActiveFromMin, pir_pir[F("activeFromMin")]);
+  CJSON(pirActiveToHour, pir_pir[F("activeToHour")]);
+  CJSON(pirActiveToMin, pir_pir[F("activeToMin")]);
+
   JsonObject def = doc[F("def")];
   CJSON(bootPreset, def[F("ps")]);
   CJSON(turnOnAtBoot, def["on"]); // true
@@ -506,6 +517,17 @@ void serializeConfig() {
   light_nl[F("dur")] = nightlightDelayMinsDefault;
   light_nl[F("tbri")] = nightlightTargetBri;
   light_nl[F("macro")] = macroNl;
+
+  // PIR config
+  JsonObject pir_pir = light.createNestedObject("pir");
+  pir_pir[F("enabled")] = pirEnabled;
+  pir_pir[F("activationPreset")] = pirActivationPreset;
+  pir_pir[F("stayActivatedTimeSec")] = pirStayActivatedTimeSec;
+  pir_pir[F("activationCooldownTimeSec")] = pirActivationCooldownTimeSec;
+  pir_pir[F("activeFromHour")] = pirActiveFromHour;
+  pir_pir[F("activeFromMin")] = pirActiveFromMin;
+  pir_pir[F("activeToHour")] = pirActiveToHour;
+  pir_pir[F("activeToMin")] = pirActiveToMin;
 
   JsonObject def = doc.createNestedObject("def");
   def[F("ps")] = bootPreset;

@@ -106,6 +106,16 @@ void handleSettingsSet(AsyncWebServerRequest *request, byte subPage)
     nightlightDelayMins = nightlightDelayMinsDefault;
     nightlightMode = request->arg(F("TW")).toInt();
 
+    // PIR settings
+    pirEnabled = request->hasArg(F("PIR_EN"));
+    pirActivationPreset = request->arg(F("PIR_AP")).toInt();    
+    pirStayActivatedTimeSec = request->arg(F("PIR_SAT")).toInt(); 
+    pirActivationCooldownTimeSec = request->arg(F("PIR_ACD")).toInt();   
+    pirActiveFromHour = request->arg(F("PIR_AFH")).toInt();
+    pirActiveFromMin = request->arg(F("PIR_AFM")).toInt();
+    pirActiveToHour = request->arg(F("PIR_ATH")).toInt();
+    pirActiveToMin = request->arg(F("PIR_ATM")).toInt();
+
     t = request->arg(F("PB")).toInt();
     if (t >= 0 && t < 4) strip.paletteBlend = t;
     strip.reverseMode = request->hasArg(F("RV"));

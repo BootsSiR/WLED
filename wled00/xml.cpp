@@ -298,7 +298,18 @@ void getSettingsJS(byte subPage, char* dest)
     sappend('v',SET_F("BF"),briMultiplier);
     sappend('v',SET_F("TB"),nightlightTargetBri);
     sappend('v',SET_F("TL"),nightlightDelayMinsDefault);
-    sappend('v',SET_F("TW"),nightlightMode);
+    sappend('v',SET_F("TW"),nightlightMode);    
+
+    // PIR settings
+    sappend('c',SET_F("PIR_EN"),pirEnabled);
+    sappend('v',SET_F("PIR_AP"),pirActivationPreset);
+    sappend('v',SET_F("PIR_SAT"),pirStayActivatedTimeSec);
+    sappend('v',SET_F("PIR_AFH"),pirActiveFromHour);
+    sappend('v',SET_F("PIR_AFM"),pirActiveFromMin);
+    sappend('v',SET_F("PIR_ATH"),pirActiveToHour);
+    sappend('v',SET_F("PIR_ATM"),pirActiveToMin);
+    sappend('v',SET_F("PIR_ACD"),pirActivationCooldownTimeSec);
+
     sappend('i',SET_F("PB"),strip.paletteBlend);
     sappend('c',SET_F("RV"),strip.reverseMode);
     sappend('c',SET_F("SL"),skipFirstLed);
