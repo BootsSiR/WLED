@@ -31,7 +31,7 @@
 #define WLED_DISABLE_BLYNK         // saves 6kb
 #define WLED_DISABLE_CRONIXIE      // saves 3kb
 #define WLED_DISABLE_HUESYNC       // saves 4kb
-#define WLED_DISABLE_INFRARED      // there is no pin left for this on ESP8266-01, saves 12kb
+//#define WLED_DISABLE_INFRARED      // there is no pin left for this on ESP8266-01, saves 12kb
 #ifndef WLED_DISABLE_MQTT
   #define WLED_ENABLE_MQTT         // saves 12kb
 #endif
@@ -229,6 +229,19 @@ WLED_GLOBAL byte nightlightDelayMins _INIT(60);
 WLED_GLOBAL byte nightlightMode      _INIT(NL_MODE_FADE); // See const.h for available modes. Was nightlightFade
 WLED_GLOBAL bool fadeTransition      _INIT(true);   // enable crossfading color transition
 WLED_GLOBAL uint16_t transitionDelay _INIT(750);    // default crossfade duration in ms
+
+// PIR settings
+WLED_GLOBAL byte pirActivationPreset _INIT(20);
+WLED_GLOBAL uint16_t pirStayActivatedTimeSec _INIT(30);
+WLED_GLOBAL uint16_t pirActivationCooldownTimeSec _INIT(30);
+WLED_GLOBAL bool pirEnabled _INIT(false);
+WLED_GLOBAL byte pirActiveFromHour _INIT(9);
+WLED_GLOBAL byte pirActiveFromMin _INIT(0);
+WLED_GLOBAL byte pirActiveToHour _INIT(8);
+WLED_GLOBAL byte pirActiveToMin _INIT(0);
+
+// Ambient light
+WLED_GLOBAL byte ambientLightLevel _INIT(0);
 
 WLED_GLOBAL bool skipFirstLed  _INIT(false);        // ignore first LED in strip (useful if you need the LED as signal repeater)
 WLED_GLOBAL byte briMultiplier _INIT(100);          // % of brightness to set (to limit power, if you set it to 50 and set bri to 255, actual brightness will be 127)
