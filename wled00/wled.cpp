@@ -337,6 +337,7 @@ void WLED::beginStrip()
   pinMode(RLYPIN, OUTPUT);
 #if RLYMDE
   digitalWrite(RLYPIN, bri);
+  DEBUG_PRINTLN("RELAY: " + bri);
 #else
   digitalWrite(RLYPIN, !bri);
 #endif
