@@ -127,7 +127,7 @@ void registerUsermods()
   usermods.add(new IRCodeUsermod());
   //usermods.add(new LightSensorMod());
   //usermods.add(new PIRsensorSwitch());
-}
+
   #ifdef USERMOD_VL53L0X_GESTURES
   usermods.add(new UsermodVL53L0XGestures());
   #endif
