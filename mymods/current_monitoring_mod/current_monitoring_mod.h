@@ -126,6 +126,11 @@ double amp = 0;
       sprintf(str, "%.2f", _led1Current + _led2Current);
       tempArr3.add(str); //value
       tempArr3.add(" A"); //unit
+
+      JsonArray tempArr4 = user.createNestedArray("LED Wattage (total)"); //name
+      sprintf(str, "%d", (int)((_led1Current + _led2Current) * 5.0f));
+      tempArr4.add(str); //value
+      tempArr4.add(" W"); //unit
     }    
 
 };
