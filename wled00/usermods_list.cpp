@@ -52,6 +52,7 @@
 #include "../mymods/pin_test_mod/pin_test_mod.h"
 #include "../mymods/mcp3208/mcp3208_mod.h"
 #include "../mymods/current_monitoring_mod/current_monitoring_mod.h"
+#include "../mymods/IR_code_mod/ir_code_mod.h"
 //#include "../usermods/PIR_sensor_switch/usermod_PIR_sensor_switch.h"
 
 void registerUsermods()
@@ -105,6 +106,7 @@ void registerUsermods()
   usermods.add(new PassiveIRMod());
   usermods.add(new MCP3208Mod());
   usermods.add(new CurrentMonitoringMod());
+  usermods.add(new IRCodeUsermod());
   //usermods.add(new LightSensorMod());
   //usermods.add(new PIRsensorSwitch());
 }

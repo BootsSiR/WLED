@@ -379,13 +379,22 @@ void decodeIR40(uint32_t code)
   lastValidCode = code;
 }
 
+void togglePower() {
+  if (bri == 0) {
+    bri = briLast;
+  } else {
+    briLast = bri;
+    bri = 0;
+  }
+}
+
 void decodeIR44(uint32_t code)
 {
   switch (code) {
     case IR44_BPLUS       : incBrightness();                                            break;
     case IR44_BMINUS      : decBrightness();                                            break;
-    case IR44_OFF         : briLast = bri; bri = 0;                                     break;
-    case IR44_ON          : bri = briLast;                                              break;
+    case IR44_OFF         : togglePower();                                              break;
+    case IR44_ON          : togglePower();                                              break;
     case IR44_RED         : colorFromUint24(COLOR_RED);                                 break;
     case IR44_REDDISH     : colorFromUint24(COLOR_REDDISH);                             break;
     case IR44_ORANGE      : colorFromUint24(COLOR_ORANGE);                              break;
@@ -551,6 +560,7 @@ void handleIR()
           Serial.print("IR recv\r\n0x");
           Serial.println((uint32_t)results.value, HEX);
           Serial.println();
+          irLastCode = results.value;
         }
         decodeIR(results.value);
         irrecv->resume();

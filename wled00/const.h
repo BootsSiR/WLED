@@ -37,6 +37,7 @@
 #define USERMOD_ID_PASSIVEPIR    14
 #define USERMOD_ID_LIGHTSENSOR   15
 #define USERMOD_ID_MCP3208       16
+#define USERMOD_ID_IRCODE        17
 
 //Access point behavior
 #define AP_BEHAVIOR_BOOT_NO_CONN  0            //Open AP when no connection after boot

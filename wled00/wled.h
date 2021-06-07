@@ -305,6 +305,7 @@ WLED_GLOBAL bool nodeBroadcastEnabled _INIT(false);
 
 WLED_GLOBAL bool buttonEnabled  _INIT(true);
 WLED_GLOBAL byte irEnabled      _INIT(0);     // Infrared receiver
+WLED_GLOBAL uint32_t irLastCode _INIT(0);     // last IR code received
 
 WLED_GLOBAL uint16_t udpPort    _INIT(21324); // WLED notifier default port
 WLED_GLOBAL uint16_t udpPort2   _INIT(65506); // WLED notifier supplemental port
